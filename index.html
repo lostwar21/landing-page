@@ -1,23 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Agung Pambudi | Data Specialist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            primary: '#3B82F6',
+            primaryDark: '#2563EB',
+            heading: '#1F2937',
+            text: '#374151',
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body class="bg-white text-gray-800 font-sans">
-
-  <!-- HERO SECTION -->
-  <header class="py-20 bg-gray-100">
-    <div class="container mx-auto px-4 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Agung Pambudi</h1>
-      <p class="text-lg md:text-xl mb-6">Data Specialist & System Information Developer</p>
-      <a href="#contact" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded">
-        Contact Me
-      </a>
-    </div>
-  </header>
 
   <!-- ABOUT SECTION -->
   <section id="about" class="py-16">
