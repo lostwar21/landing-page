@@ -7,7 +7,6 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
   <style>
-    /* Gaya CSS yang sudah ada */
     body {
       font-family: 'Inter', sans-serif;
       background-color: #f8fafc;
@@ -19,7 +18,7 @@
     header {
       background: linear-gradient(90deg, #eef2ff, #e0e7ff);
       color: #1f2937;
-      padding: 4rem 1rem;
+      padding: 2rem 1rem;
       text-align: center;
     }
     header h1 {
@@ -30,6 +29,18 @@
     header p {
       font-size: 1.2rem;
       opacity: 0.9;
+    }
+    nav {
+      margin: 1rem 0;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #6366f1;
+      font-weight: 600;
+    }
+    nav a:hover {
+      text-decoration: underline;
     }
     section {
       max-width: 1000px;
@@ -84,57 +95,50 @@
       padding: 3rem 1rem;
       background-color: #f1f5f9;
     }
-
-    /* Tambahkan media queries di sini */
     @media (max-width: 768px) {
       header h1 {
         font-size: 2rem;
       }
-
       header p {
         font-size: 1rem;
       }
-
       section {
         padding: 2rem 1rem;
       }
-
       h2 {
         font-size: 1.5rem;
       }
-
       .card {
         padding: 1.5rem;
       }
-
       .button {
         padding: 0.5rem 1rem;
       }
     }
-
-    .card img {
-      width: 100%; /* Mengatur gambar agar responsif */
-      max-width: 48px; /* Menjaga ukuran maksimum */
-    }
   </style>
 </head>
-
 
 <body>
 
   <header>
     <h1>Agung Pambudi</h1>
     <p>Data Analyst & Machine Learning Enthusiast</p>
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <section>
+  <section id="about">
     <h2>About Me</h2>
     <p style="text-align:center;">
       I am a professional in Information Systems, Data Mining, and Machine Learning. Focused on developing data-driven solutions to support more effective decision making.
     </p>
   </section>
 
-  <section>
+  <section id="skills">
     <h2>Skills</h2>
     <div class="skills">
       <div class="card">
@@ -156,7 +160,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="projects">
     <h2>Projects</h2>
     <div class="projects">
       <div class="card">
@@ -168,7 +172,7 @@
     </div>
   </section>
 
-  <section style="text-align:center;">
+  <section id="contact" style="text-align:center;">
     <h2>Contact Me</h2>
     <p>
       <a class="button" href="mailto:agung.pambudi4000@gmail.com">Email Me</a>
