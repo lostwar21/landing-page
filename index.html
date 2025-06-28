@@ -3,34 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Agung Pambudi - Personal Landing Page</title>
+  
+  <!-- Title Tag -->
+  <title>Agung Pambudi | Data Analyst & Machine Learning Enthusiast</title>
+
+  <!-- Favicon Emoji -->
   <link rel="icon" href="https://em-content.zobj.net/thumbs/240/twitter/351/brain_1f9e0.png" />
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Lottie -->
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Agung Pambudi - Data Analyst & Machine Learning Enthusiast. Transforming Data Into Insight through professional data analysis and machine learning solutions.">
+  <link rel="canonical" href="https://budiperkasa.site/">
+  <meta property="og:title" content="Agung Pambudi - Data Analyst & Machine Learning Enthusiast" />
+  <meta property="og:description" content="Transforming Data Into Insight through professional data analysis and machine learning solutions." />
+  <meta property="og:image" content="https://budiperkasa.site/preview.jpg" />
+  <meta property="og:url" content="https://budiperkasa.site/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Agung Pambudi - Data Analyst & Machine Learning Enthusiast" />
+  <meta name="twitter:description" content="Transforming Data Into Insight through professional data analysis and machine learning solutions." />
+  <meta name="twitter:image" content="https://budiperkasa.site/preview.jpg" />
+
   <style>
-    <!-- SEO Meta Description -->
-<meta name="description" content="Agung Pambudi - Data Analyst & Machine Learning Enthusiast. Transforming Data Into Insight through professional data analysis and machine learning solutions.">
-
-<!-- Canonical URL -->
-<link rel="canonical" href="https://budiperkasa.site/">
-
-<!-- Open Graph Meta -->
-<meta property="og:title" content="Agung Pambudi - Data Analyst & Machine Learning Enthusiast" />
-<meta property="og:description" content="Transforming Data Into Insight through professional data analysis and machine learning solutions." />
-<meta property="og:image" content="https://budiperkasa.site/preview.jpg" />
-<meta property="og:url" content="https://budiperkasa.site/" />
-<meta property="og:type" content="website" />
-
-<!-- Twitter Card Meta -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Agung Pambudi - Data Analyst & Machine Learning Enthusiast" />
-<meta name="twitter:description" content="Transforming Data Into Insight through professional data analysis and machine learning solutions." />
-<meta name="twitter:image" content="https://budiperkasa.site/preview.jpg" />
-
-<!-- Title Tag -->
-<title>Agung Pambudi | Data Analyst & Machine Learning Enthusiast</title>
-
     html {
       scroll-behavior: smooth;
     }
@@ -43,7 +45,7 @@
       line-height: 1.7;
     }
     header {
-      background: linear-gradient(135deg, #dbeafe, #eff6ff);
+      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
       padding: 3rem 1rem 1rem;
       text-align: center;
       position: relative;
@@ -52,11 +54,11 @@
       font-size: 2.5rem;
       font-weight: 700;
       margin: 1rem 0 0.5rem;
-      color: #1e3a8a;
+      color: #ffffff;
     }
     header p {
       font-size: 1.2rem;
-      color: #374151;
+      color: #dbeafe;
       margin-bottom: 1rem;
     }
     header .subtitle {
@@ -73,8 +75,8 @@
       margin-bottom: 2rem;
     }
     .button {
-      background-color: #1e3a8a;
-      color: white;
+      background-color: #facc15;
+      color: #1e3a8a;
       padding: 0.75rem 1.5rem;
       border-radius: 9999px;
       font-weight: 600;
@@ -82,7 +84,7 @@
       transition: background 0.2s ease;
     }
     .button:hover {
-      background-color: #172554;
+      background-color: #fde68a;
     }
     .menu-btn {
       position: absolute;
@@ -92,7 +94,7 @@
       border: none;
       font-size: 1.75rem;
       cursor: pointer;
-      color: #1e3a8a;
+      color: #facc15;
     }
     .sidebar {
       position: fixed;
@@ -131,11 +133,14 @@
       right: 0;
       bottom: 0;
       background: rgba(0,0,0,0.3);
-      display: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease;
       z-index: 999;
     }
     .overlay.active {
-      display: block;
+      opacity: 1;
+      visibility: visible;
     }
     section {
       max-width: 1000px;
@@ -147,7 +152,7 @@
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 3rem;
-      color: #111827;
+      color: #1e3a8a;
       border-bottom: 3px solid #facc15;
       display: inline-block;
       padding-bottom: 0.3rem;
@@ -200,9 +205,8 @@
       transition: background 0.2s ease;
     }
     .social-icons a:hover {
-      background: #172554;
+      background: #3b82f6;
     }
-    /* Animasi fade-in */
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
@@ -212,54 +216,12 @@
       opacity: 1;
       transform: translateY(0);
     }
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
-      header .subtitle {
-        font-size: 0.95rem;
-      }
-      h2 {
-        font-size: 1.5rem;
-      }
-      .card {
-        padding: 1.5rem;
-      }
-    }
-    @media (max-width: 480px) {
-      header {
-        padding: 2rem 1rem 1rem;
-      }
-      header h1 {
-        font-size: 1.75rem;
-      }
-      .button {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.95rem;
-      }
-      .social-icons a {
-        width: 36px;
-        height: 36px;
-        font-size: 1rem;
-      }
-    }
   </style>
 </head>
 <body>
   <header>
     <button class="menu-btn" id="openMenu"><i class="fas fa-bars"></i></button>
-    <lottie-player
-      src="https://assets7.lottiefiles.com/packages/lf20_jcikwtux.json"
-      background="transparent"
-      speed="1"
-      style="width: 200px; height: 200px; margin: 0 auto;"
-      loop
-      autoplay>
-    </lottie-player>
+    <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_jcikwtux.json" background="transparent" speed="1" style="width: 200px; height: 200px; margin: 0 auto;" loop autoplay></lottie-player>
     <h1>Agung Pambudi</h1>
     <p>Data Analyst & Machine Learning Enthusiast</p>
     <div class="subtitle">Transforming Data Into Insight</div>
@@ -279,30 +241,16 @@
 
   <section id="about" class="fade-in">
     <h2>About Me</h2>
-    <p style="text-align:center;">
-      I am a professional in Information Systems, Data Mining, and Machine Learning.
-    </p>
+    <p style="text-align:center;">I am a professional in Information Systems, Data Mining, and Machine Learning.</p>
   </section>
 
   <section id="skills" class="fade-in">
     <h2>Skills</h2>
     <div class="skills">
-      <div class="card">
-        <i class="fas fa-code fa-2x"></i>
-        <p>Python Programming</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-chart-bar fa-2x"></i>
-        <p>Data Analysis</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-brain fa-2x"></i>
-        <p>Machine Learning</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-database fa-2x"></i>
-        <p>Data Mining</p>
-      </div>
+      <div class="card"><i class="fas fa-code fa-2x"></i><p>Python Programming</p></div>
+      <div class="card"><i class="fas fa-chart-bar fa-2x"></i><p>Data Analysis</p></div>
+      <div class="card"><i class="fas fa-brain fa-2x"></i><p>Machine Learning</p></div>
+      <div class="card"><i class="fas fa-database fa-2x"></i><p>Data Mining</p></div>
     </div>
   </section>
 
@@ -313,7 +261,7 @@
         <i class="fas fa-lightbulb fa-2x"></i>
         <h3>Sirjumba</h3>
         <p>A recommendation system for majors using data mining and machine learning techniques.</p>
-        <a class="button" href="https://ca0586b6-2d76-4317-a7df-ca54e8f7fd4f-00-l18jwpxr1is.sisko.replit.dev/" target="_blank" style="background-color:#facc15; color:#1e3a8a;">View Project</a>
+        <a class="button" href="https://ca0586b6-2d76-4317-a7df-ca54e8f7fd4f-00-l18jwpxr1is.sisko.replit.dev/" target="_blank">View Project</a>
       </div>
     </div>
   </section>
@@ -327,9 +275,7 @@
     </div>
   </section>
 
-  <footer>
-    &copy; 2025 Agung Pambudi. All rights reserved.
-  </footer>
+  <footer>&copy; 2025 Agung Pambudi. All rights reserved.</footer>
 
   <script>
     const sidebar = document.getElementById('sidebar');
@@ -340,7 +286,312 @@
       sidebar.classList.add('active');
       overlay.classList.add('active');
     });
+    overlay.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+      overlay.classList.remove('active');
+    });
 
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-in').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- Title Tag -->
+  <title>Agung Pambudi | Data Analyst & Machine Learning Enthusiast</title>
+
+  <!-- Favicon Emoji -->
+  <link rel="icon" href="https://em-content.zobj.net/thumbs/240/twitter/351/brain_1f9e0.png" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Lottie -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Agung Pambudi - Data Analyst & Machine Learning Enthusiast. Transforming Data Into Insight through professional data analysis and machine learning solutions.">
+  <link rel="canonical" href="https://budiperkasa.site/">
+  <meta property="og:title" content="Agung Pambudi - Data Analyst & Machine Learning Enthusiast" />
+  <meta property="og:description" content="Transforming Data Into Insight through professional data analysis and machine learning solutions." />
+  <meta property="og:image" content="https://budiperkasa.site/preview.jpg" />
+  <meta property="og:url" content="https://budiperkasa.site/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Agung Pambudi - Data Analyst & Machine Learning Enthusiast" />
+  <meta name="twitter:description" content="Transforming Data Into Insight through professional data analysis and machine learning solutions." />
+  <meta name="twitter:image" content="https://budiperkasa.site/preview.jpg" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #111827;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+      padding: 3rem 1rem 1rem;
+      text-align: center;
+      position: relative;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 1rem 0 0.5rem;
+      color: #ffffff;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #dbeafe;
+      margin-bottom: 1rem;
+    }
+    header .subtitle {
+      font-size: 1rem;
+      color: #facc15;
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .button {
+      background-color: #facc15;
+      color: #1e3a8a;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .button:hover {
+      background-color: #fde68a;
+    }
+    .menu-btn {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.75rem;
+      cursor: pointer;
+      color: #facc15;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: white;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+      padding-top: 2rem;
+      transition: left 0.3s ease;
+      z-index: 1000;
+      overflow-y: auto;
+    }
+    .sidebar.active {
+      left: 0;
+    }
+    .sidebar a {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1.5rem;
+      color: #374151;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .sidebar a:hover {
+      background: #fef3c7;
+      color: #1e3a8a;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.3);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease;
+      z-index: 999;
+    }
+    .overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 4rem 1rem;
+    }
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      color: #1e3a8a;
+      border-bottom: 3px solid #facc15;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+    .skills, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+    .card i {
+      margin-bottom: 1rem;
+      color: #1e3a8a;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6b7280;
+      padding: 3rem 1rem;
+      background-color: #f3f4f6;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: #1e3a8a;
+      color: white;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .social-icons a:hover {
+      background: #3b82f6;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="menu-btn" id="openMenu"><i class="fas fa-bars"></i></button>
+    <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_jcikwtux.json" background="transparent" speed="1" style="width: 200px; height: 200px; margin: 0 auto;" loop autoplay></lottie-player>
+    <h1>Agung Pambudi</h1>
+    <p>Data Analyst & Machine Learning Enthusiast</p>
+    <div class="subtitle">Transforming Data Into Insight</div>
+    <div class="button-group">
+      <a href="https://drive.google.com/" target="_blank" class="button">Download CV</a>
+      <a href="https://wa.me/6282261070025" target="_blank" class="button">Hire Me</a>
+    </div>
+  </header>
+
+  <div class="sidebar" id="sidebar">
+    <a href="#about"><i class="fas fa-user"></i> About</a>
+    <a href="#skills"><i class="fas fa-code"></i> Skills</a>
+    <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+  </div>
+  <div class="overlay" id="overlay"></div>
+
+  <section id="about" class="fade-in">
+    <h2>About Me</h2>
+    <p style="text-align:center;">I am a professional in Information Systems, Data Mining, and Machine Learning.</p>
+  </section>
+
+  <section id="skills" class="fade-in">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="card"><i class="fas fa-code fa-2x"></i><p>Python Programming</p></div>
+      <div class="card"><i class="fas fa-chart-bar fa-2x"></i><p>Data Analysis</p></div>
+      <div class="card"><i class="fas fa-brain fa-2x"></i><p>Machine Learning</p></div>
+      <div class="card"><i class="fas fa-database fa-2x"></i><p>Data Mining</p></div>
+    </div>
+  </section>
+
+  <section id="projects" class="fade-in">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <i class="fas fa-lightbulb fa-2x"></i>
+        <h3>Sirjumba</h3>
+        <p>A recommendation system for majors using data mining and machine learning techniques.</p>
+        <a class="button" href="https://ca0586b6-2d76-4317-a7df-ca54e8f7fd4f-00-l18jwpxr1is.sisko.replit.dev/" target="_blank">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="fade-in" style="text-align:center;">
+    <h2>Contact Me</h2>
+    <div class="social-icons">
+      <a href="mailto:agung.pambudi4000@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://wa.me/6282261070025" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.linkedin.com/in/agung-pambudi-bbba1817b" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </section>
+
+  <footer>&copy; 2025 Agung Pambudi. All rights reserved.</footer>
+
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    const openBtn = document.getElementById('openMenu');
+
+    openBtn.addEventListener('click', () => {
+      sidebar.classList.add('active');
+      overlay.classList.add('active');
+    });
     overlay.addEventListener('click', () => {
       sidebar.classList.remove('active');
       overlay.classList.remove('active');
