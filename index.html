@@ -6,9 +6,7 @@
   <title>Agung Pambudi - Personal Landing Page</title>
   <link rel="icon" href="https://tabler-icons.io/static/tabler-icons/icons/brand-google-analytics.svg" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
-  <!-- Font Awesome untuk ikon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Lottie Player -->
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <style>
     body {
@@ -21,9 +19,9 @@
     }
     header {
       background: linear-gradient(135deg, #e0e7ff, #eef2ff);
-      padding: 3rem 1rem;
+      padding: 3rem 1rem 1rem;
       text-align: center;
-       position: relative; /* supaya nav absolute nempel header */
+      position: relative;
     }
     header h1 {
       font-size: 2.5rem;
@@ -61,18 +59,60 @@
     .button:hover {
       background-color: #4338ca;
     }
-    nav {
-      margin-top: 2rem;
+
+    .menu-btn {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.75rem;
+      cursor: pointer;
+      color: #4f46e5;
     }
-    nav a {
-      margin: 0 1rem;
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: white;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+      padding-top: 2rem;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+    .sidebar.active {
+      left: 0;
+    }
+    .sidebar a {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1.5rem;
+      color: #374151;
       text-decoration: none;
-      color: #6366f1;
-      font-weight: 600;
+      font-weight: 500;
+      transition: background 0.2s;
     }
-    nav a:hover {
-      text-decoration: underline;
+    .sidebar a:hover {
+      background: #f3f4f6;
     }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.3);
+      display: none;
+      z-index: 999;
+    }
+    .overlay.active {
+      display: block;
+    }
+
     section {
       max-width: 1000px;
       margin: 0 auto;
@@ -102,9 +142,9 @@
       transform: translateY(-6px);
       box-shadow: 0 8px 24px rgba(0,0,0,0.1);
     }
-    .card svg {
+    .card i {
       margin-bottom: 1rem;
-      stroke: #4f46e5;
+      color: #4f46e5;
     }
     footer {
       text-align: center;
@@ -135,58 +175,23 @@
     .social-icons a:hover {
       background: #4338ca;
     }
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      section {
-        padding: 2rem 1rem;
-      }
-      h2 {
-        font-size: 1.6rem;
-      }
-      .card {
-        padding: 1.5rem;
-      }
-    }
-    .top-right-nav {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.top-right-nav a {
-  background-color: #4f46e5;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 9999px;
-  font-weight: 500;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: background 0.2s ease;
-}
-
-.top-right-nav a:hover {
-  background-color: #4338ca;
-}
   </style>
 </head>
 <body>
 
   <header>
+    <!-- Hamburger Menu -->
+    <button class="menu-btn" id="openMenu"><i class="fas fa-bars"></i></button>
+
     <!-- Lottie Animation -->
     <lottie-player
-  src="https://assets7.lottiefiles.com/packages/lf20_jcikwtux.json"
-  background="transparent"
-  speed="1"
-  style="width: 250px; height: 250px; margin: 0 auto;"
-  loop
-  autoplay>
-</lottie-player>
-
+      src="https://assets7.lottiefiles.com/packages/lf20_jcikwtux.json"
+      background="transparent"
+      speed="1"
+      style="width: 200px; height: 200px; margin: 0 auto;"
+      loop
+      autoplay>
+    </lottie-player>
 
     <h1>Agung Pambudi</h1>
     <p>Data Analyst & Machine Learning Enthusiast</p>
@@ -195,18 +200,20 @@
       <a href="https://drive.google.com/" target="_blank" class="button">Download CV</a>
       <a href="https://wa.me/6282261070025" target="_blank" class="button">Hire Me</a>
     </div>
-      <nav class="top-right-nav">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
   </header>
+
+  <div class="sidebar" id="sidebar">
+    <a href="#about"><i class="fas fa-user"></i> About</a>
+    <a href="#skills"><i class="fas fa-code"></i> Skills</a>
+    <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+  </div>
+  <div class="overlay" id="overlay"></div>
 
   <section id="about">
     <h2>About Me</h2>
     <p style="text-align:center;">
-      I am a professional in Information Systems, Data Mining, and Machine Learning. Focused on developing data-driven solutions to support more effective decision making.
+      I am a professional in Information Systems, Data Mining, and Machine Learning.
     </p>
   </section>
 
@@ -238,8 +245,8 @@
       <div class="card">
         <i class="fas fa-lightbulb fa-2x"></i>
         <h3>Sirjumba</h3>
-        <p>A recommendation system for majors using data mining and machine learning techniques. This project is still under development. Feedback is welcome!</p>
-        <a class="button" href="https://ca0586b6-2d76-4317-a7df-ca54e8f7fd4f-00-l18jwpxr1is.sisko.replit.dev" target="_blank">View Project</a>
+        <p>A recommendation system for majors using data mining and machine learning techniques.</p>
+        <a class="button" href="#" target="_blank">View Project</a>
       </div>
     </div>
   </section>
@@ -256,5 +263,21 @@
   <footer>
     &copy; 2025 Agung Pambudi. All rights reserved.
   </footer>
+
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    const openBtn = document.getElementById('openMenu');
+
+    openBtn.addEventListener('click', () => {
+      sidebar.classList.add('active');
+      overlay.classList.add('active');
+    });
+
+    overlay.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+  </script>
 </body>
 </html>
