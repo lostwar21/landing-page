@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Agung Pambudi - Personal Landing Page</title>
-  <!-- Favicon Emoji Otak -->
   <link rel="icon" href="https://em-content.zobj.net/thumbs/240/twitter/351/brain_1f9e0.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -84,6 +83,7 @@
       padding-top: 2rem;
       transition: left 0.3s ease;
       z-index: 1000;
+      overflow-y: auto;
     }
     .sidebar.active {
       left: 0;
@@ -132,7 +132,7 @@
     }
     .skills, .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 2rem;
     }
     .card {
@@ -180,7 +180,6 @@
     .social-icons a:hover {
       background: #172554;
     }
-
     /* Animasi fade-in */
     .fade-in {
       opacity: 0;
@@ -190,6 +189,41 @@
     .fade-in.visible {
       opacity: 1;
       transform: translateY(0);
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      header .subtitle {
+        font-size: 0.95rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      .card {
+        padding: 1.5rem;
+      }
+    }
+    @media (max-width: 480px) {
+      header {
+        padding: 2rem 1rem 1rem;
+      }
+      header h1 {
+        font-size: 1.75rem;
+      }
+      .button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.95rem;
+      }
+      .social-icons a {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -233,7 +267,7 @@
     <div class="skills">
       <div class="card">
         <i class="fas fa-code fa-2x"></i>
-        <p>Programming</p>
+        <p>Python Programming</p>
       </div>
       <div class="card">
         <i class="fas fa-chart-bar fa-2x"></i>
@@ -290,7 +324,6 @@
       overlay.classList.remove('active');
     });
 
-    // Intersection Observer untuk animasi fade-in
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
