@@ -4,12 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Agung Pambudi - Personal Landing Page</title>
-  <!-- Ganti favicon emoji -->
+  <!-- Favicon Emoji Otak -->
   <link rel="icon" href="https://em-content.zobj.net/thumbs/240/twitter/351/brain_1f9e0.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Inter', sans-serif;
       background-color: #f9fafb;
@@ -28,7 +31,7 @@
       font-size: 2.5rem;
       font-weight: 700;
       margin: 1rem 0 0.5rem;
-      color: #1e3a8a; /* Navy Blue */
+      color: #1e3a8a;
     }
     header p {
       font-size: 1.2rem;
@@ -37,7 +40,7 @@
     }
     header .subtitle {
       font-size: 1rem;
-      color: #facc15; /* Amber */
+      color: #facc15;
       margin-bottom: 2rem;
       font-style: italic;
     }
@@ -49,7 +52,7 @@
       margin-bottom: 2rem;
     }
     .button {
-      background-color: #1e3a8a; /* Navy Blue */
+      background-color: #1e3a8a;
       color: white;
       padding: 0.75rem 1.5rem;
       border-radius: 9999px;
@@ -58,9 +61,8 @@
       transition: background 0.2s ease;
     }
     .button:hover {
-      background-color: #172554; /* Darker Navy */
+      background-color: #172554;
     }
-
     .menu-btn {
       position: absolute;
       top: 1rem;
@@ -69,9 +71,8 @@
       border: none;
       font-size: 1.75rem;
       cursor: pointer;
-      color: #1e3a8a; /* Navy Blue */
+      color: #1e3a8a;
     }
-
     .sidebar {
       position: fixed;
       top: 0;
@@ -98,8 +99,8 @@
       transition: background 0.2s;
     }
     .sidebar a:hover {
-      background: #fef3c7; /* Soft amber background on hover */
-      color: #1e3a8a; /* Navy text */
+      background: #fef3c7;
+      color: #1e3a8a;
     }
     .overlay {
       position: fixed;
@@ -114,7 +115,6 @@
     .overlay.active {
       display: block;
     }
-
     section {
       max-width: 1000px;
       margin: 0 auto;
@@ -126,7 +126,7 @@
       font-weight: 700;
       margin-bottom: 3rem;
       color: #111827;
-      border-bottom: 3px solid #facc15; /* Amber underline */
+      border-bottom: 3px solid #facc15;
       display: inline-block;
       padding-bottom: 0.3rem;
     }
@@ -149,7 +149,7 @@
     }
     .card i {
       margin-bottom: 1rem;
-      color: #1e3a8a; /* Navy Blue */
+      color: #1e3a8a;
     }
     footer {
       text-align: center;
@@ -170,7 +170,7 @@
       justify-content: center;
       width: 40px;
       height: 40px;
-      background: #1e3a8a; /* Navy Blue */
+      background: #1e3a8a;
       color: white;
       border-radius: 50%;
       font-size: 1.2rem;
@@ -178,17 +178,24 @@
       transition: background 0.2s ease;
     }
     .social-icons a:hover {
-      background: #172554; /* Darker Navy */
+      background: #172554;
+    }
+
+    /* Animasi fade-in */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body>
-
   <header>
-    <!-- Hamburger Menu -->
     <button class="menu-btn" id="openMenu"><i class="fas fa-bars"></i></button>
-
-    <!-- Lottie Animation -->
     <lottie-player
       src="https://assets7.lottiefiles.com/packages/lf20_jcikwtux.json"
       background="transparent"
@@ -197,7 +204,6 @@
       loop
       autoplay>
     </lottie-player>
-
     <h1>Agung Pambudi</h1>
     <p>Data Analyst & Machine Learning Enthusiast</p>
     <div class="subtitle">Transforming Data Into Insight</div>
@@ -215,14 +221,14 @@
   </div>
   <div class="overlay" id="overlay"></div>
 
-  <section id="about">
+  <section id="about" class="fade-in">
     <h2>About Me</h2>
     <p style="text-align:center;">
       I am a professional in Information Systems, Data Mining, and Machine Learning.
     </p>
   </section>
 
-  <section id="skills">
+  <section id="skills" class="fade-in">
     <h2>Skills</h2>
     <div class="skills">
       <div class="card">
@@ -244,7 +250,7 @@
     </div>
   </section>
 
-  <section id="projects">
+  <section id="projects" class="fade-in">
     <h2>Projects</h2>
     <div class="projects">
       <div class="card">
@@ -256,7 +262,7 @@
     </div>
   </section>
 
-  <section id="contact" style="text-align:center;">
+  <section id="contact" class="fade-in" style="text-align:center;">
     <h2>Contact Me</h2>
     <div class="social-icons">
       <a href="mailto:agung.pambudi4000@gmail.com"><i class="fas fa-envelope"></i></a>
@@ -282,6 +288,19 @@
     overlay.addEventListener('click', () => {
       sidebar.classList.remove('active');
       overlay.classList.remove('active');
+    });
+
+    // Intersection Observer untuk animasi fade-in
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-in').forEach(section => {
+      observer.observe(section);
     });
   </script>
 </body>
