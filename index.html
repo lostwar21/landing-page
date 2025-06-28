@@ -33,6 +33,19 @@
     nav {
       margin: 1rem 0;
     }
+    nav img {
+      width: 120px; /* Ukuran gambar */
+      height: 120px; /* Ukuran gambar */
+      border-radius: 50%; /* Membuat gambar bulat */
+      object-fit: contain; /* Memastikan gambar sepenuhnya terlihat */
+      object-position: center top; /* Mengatur posisi gambar ke tengah atas */
+      display: block; /* Menampilkan gambar sebagai blok */
+      margin: 0 auto 1rem; /* Margin bawah untuk jarak */
+      /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); */ /* Menghilangkan bayangan */
+      /* background-color: #e0e7ff; */ /* Menghilangkan warna latar belakang */
+      padding: 0; /* Menghilangkan padding */
+      /* border: 4px solid #6366f1; */ /* Menghilangkan bingkai berwarna biru */
+    }
     nav a {
       margin: 0 1rem;
       text-decoration: none;
@@ -124,17 +137,8 @@
     <h1>Agung Pambudi</h1>
     <p>Data Analyst & Machine Learning Enthusiast</p>
     <nav>
-       <img src="https://i.ibb.co/4g1pJwPw/IMG-20221003-090422.jpg"  
-    alt="Agung Pambudi" 
-    style="
-      width:120px;
-      height:120px;
-      border-radius:50%;
-      object-fit:cover;
-      display:block;
-      margin:0 auto 1rem;
-      box-shadow:0 2px 8px rgba(0,0,0,0.2);
-    ">
+      <img src="https://i.ibb.co/4g1pJwPw/IMG-20221003-090422.jpg"  
+           alt="Agung Pambudi">
       <a href="#about">About Me</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
